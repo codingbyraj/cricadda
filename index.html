@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+    <link rel="stylesheet" href="CSS/mian.css"> </head>
+
+<body ng-app="finderapp">
+    <div id="playerdetails" ng-controller="finderCtrl">
+        <div class="header">
+            <h1>Find Your Player</h1>
+            <div class="row">
+                <label id="lbl_select" for="select_player">Select the Player Name</label>
+            </div>
+            <div class="row">
+                <select id="select_player" name="cricPlayer" id="" ng-model="player">
+                    <option value="0">--Select--</option>
+                    <option value="35320">Sachin Tendulkar</option>
+                    <option value="28114">Rahul Dravid</option>
+                    <option value="35263">Virender Sehwag</option>
+                    <option value="28763">Gautam Gambhir</option>
+                    <option value="36084">Yuvraj Singh</option>
+                    <option value="30750">VVS Laxman</option>
+                    <option value="253802">Virat Kohli</option>
+                    <option value="321777">David Miller</option>
+                    <option value="219889">David Warner</option>
+                </select>
+            </div>
+            <div class="row">
+                <button id="find" ng-click="findNow()">Find Now</button>
+            </div>
+        </div>
+        <div id="loading"> <img id="loadingImg" src="./assets/Loading.gif" alt=""> </div>
+        <div id="container" class="content clearfix">
+            <hr>
+            <div id="playerImg" class="left"> <img id="pImage" src="assets/default.jpg" alt=""> </div>
+            <div id="playerDetail" class="right">
+                <div class="playerName">
+                    <label class="pDetail" for="">Name:</label>
+                    <label class="pDetail" for="">{{name}} </label>
+                </div>
+                <div class="playerCountry">
+                    <label class="pDetail" for="">Country:</label>
+                    <label class="pDetail" for="">{{country}}</label>
+                </div>
+                <div class="playerBowlingStyle">
+                    <label class="pDetail" for="">Bowling Style:</label>
+                    <label class="pDetail" for="">{{bowlingStyle}}</label>
+                </div>
+                <div class="playerBattingStyle">
+                    <label class="pDetail" for="">Batting Style:</label>
+                    <label class="pDetail" for="">{{battingStyle}}</label>
+                </div>
+                <div class="testRecord">
+                    <h3>Test Cricket</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Match</th>
+                                <th>Innings</th>
+                                <th>Runs</th>
+                                <th>High Score</th>
+                                <th>Average</th>
+                                <th>Catches</th>
+                            </tr>
+                            <tr>
+                                <td>{{testRecord.Mat}}</td>
+                                <td>{{testRecord.Inns}}</td>
+                                <td>{{testRecord.Runs}}</td>
+                                <td>{{testRecord.HS}}</td>
+                                <td>{{testRecord.Ave}}</td>
+                                <td>{{testRecord.Ct}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="odiRecord">
+                    <h3>ODI Cricket</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Match</th>
+                                <th>Innings</th>
+                                <th>Runs</th>
+                                <th>High Score</th>
+                                <th>Average</th>
+                            </tr>
+                            <tr>
+                                <td>{{odiRecord.Mat}}</td>
+                                <td>{{odiRecord.Inns}}</td>
+                                <td>{{odiRecord.Runs}}</td>
+                                <td>{{odiRecord.HS}}</td>
+                                <td>{{odiRecord.Ave}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="t20Record">
+                    <h3>T-20 Cricket</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Match</th>
+                                <th>Innings</th>
+                                <th>Runs</th>
+                                <th>High Score</th>
+                                <th>Average</th>
+                            </tr>
+                            <tr>
+                                <td>{{t20Record.Mat}}</td>
+                                <td>{{t20Record.Inns}}</td>
+                                <td>{{t20Record.Runs}}</td>
+                                <td>{{t20Record.HS}}</td>
+                                <td>{{t20Record.Ave}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
