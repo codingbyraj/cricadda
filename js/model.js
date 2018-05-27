@@ -10,6 +10,7 @@ app.factory("finderFactory", function ($http, $q) {
         $http.get(url).then(success, fail);
 
         function success(data) {
+            console.log(data);
             defered.resolve(data);
         }
 
